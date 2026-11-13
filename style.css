@@ -14,10 +14,11 @@
   --radius:1.25rem;
 }
 [data-theme="dark"] {
-  --bg:#1E0F22; --text:var(--cream);
+  --bg:#101017; --text:#F3F0F7;
   --accent:var(--orange);
-  --panel:#3A1B3F;
-  --tint-soft:color-mix(in srgb, var(--lilac) 14%, var(--bg));
+  --pop:var(--orange);
+  --panel:#191A27; --panel-text:#E6E0F0;
+  --tint-soft:#111119; --tint-cool:#242333;
   --carousel-bg:#E4E4E7; --carousel-text:#2D1230;
 }
 body { transition: background-color .3s, color .3s; }
@@ -84,3 +85,22 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--accent); outline
 .project-links { display:flex; flex-wrap:wrap; gap:1rem; }
 .card a { display:inline-block; color:var(--text); font-weight:700; transition:transform .2s, color .2s; }
 .card a:hover { color:var(--accent); transform:translateX(4px); }
+
+.tags { display:flex; flex-wrap:wrap; gap:.5rem; list-style:none; padding:0; }
+.tags li { background:var(--tint-cool); border:1px solid color-mix(in srgb, var(--teal) 35%, var(--bg));
+  color:var(--text); padding:.35rem .9rem; border-radius:999px; font-weight:500; }
+.tags li:nth-child(3n + 2) { background:color-mix(in srgb, var(--orange) 18%, var(--bg)); }
+.tags li:nth-child(3n) { background:color-mix(in srgb, var(--lilac) 55%, var(--bg)); }
+[data-theme="dark"] .tags li { background:#242337; border-color:#4A4663; color:#EDE9F2; }
+[data-theme="dark"] .tags li:nth-child(3n + 2) { background:#352330; border-color:#75445A; }
+[data-theme="dark"] .tags li:nth-child(3n) { background:#342B25; border-color:#765B44; }
+.learning-label { margin:1.5rem 0 .5rem; font-weight:700; color:var(--accent); }
+.learning-tags li { background:color-mix(in srgb, var(--accent) 18%, var(--bg)); border-color:var(--accent); }
+[data-theme="dark"] .learning-tags li { background:#3B2924; border-color:var(--accent); }
+.contact-links { display:flex; flex-wrap:wrap; gap:.75rem; }
+.contact-links a { display:inline-block; padding:.65rem 1.1rem; border:2px solid var(--text);
+  border-radius:999px; color:var(--text); font-weight:700; text-decoration:none;
+  transition:transform .2s, background-color .2s, color .2s; }
+.contact-links a:first-child { background:var(--pop); border-color:var(--pop); color:var(--plum); }
+.contact-links a:hover { transform:translateY(-3px); background:var(--text); color:var(--bg); }
+.contact-links a:first-child:hover { background:var(--accent); border-color:var(--accent); color:var(--bg); }
