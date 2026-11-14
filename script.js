@@ -55,6 +55,51 @@ btn.addEventListener("click", () => {
   applyLabel();
 });
 
+const phrases = [
+  "build tools that solve real problems",
+  "learn AI one step at a time",
+  "turn messy data into useful answers",
+  "make small ideas work"
+];
+const typing = document.querySelector("#typing");
+
+if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  typing.textContent = phrases[0];
+} else {
+  let phrase = 0;
+  let index = 0;
+  let deleting = false;
+
+  (function tick() {
+    const full = phrases[phrase];
+    typing.textContent = full.slice(0, index);
+    if (!deleting && index < full.length) { index++; setTimeout(tick, 70); }
+    else if (!deleting) { deleting = true; setTimeout(tick, 1200); }
+    else if (index > 0) { index--; setTimeout(tick, 35); }
+    else { deleting = false; phrase = (phrase + 1) % phrases.length; setTimeout(tick, 300); }
+  })();
+}
+
+const descriptions = [
+  "I build practical Python tools, explore data carefully, and keep moving toward AI engineering.",
+  "I learn by building small tools, testing ideas, and improving what works.",
+  "I turn curious questions into clear, useful software."
+];
+const description = document.querySelector("#description");
+const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let descriptionIndex = 0;
+description.textContent = descriptions[0];
+
+if (!reducedMotion) {
+  setInterval(() => {
+    descriptionIndex = (descriptionIndex + 1) % descriptions.length;
+    description.classList.remove("description-in");
+    void description.offsetWidth;
+    description.textContent = descriptions[descriptionIndex];
+    description.classList.add("description-in");
+  }, 4500);
+}
+
 const grid = document.querySelector("#project-grid");
 const empty = document.querySelector("#empty");
 const pills = document.querySelectorAll(".pill");
