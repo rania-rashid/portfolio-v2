@@ -26,14 +26,13 @@
   --tags-soft-bg:#342B25; --tags-soft-border:#765B44;
   --learning-bg:#3B2924;
 }
-body { transition: background-color .3s, color .3s; }
-
 *, *::before, *::after { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
   margin:0; line-height:1.6;
   font-family:"DM Sans", system-ui, sans-serif;
   background:var(--bg); color:var(--text);
+  transition: background-color .3s, color .3s;
   overflow-x:clip;
 }
 h1, h2, h3 { font-family:"Fraunces", Georgia, serif; line-height:1.1; }
@@ -136,9 +135,10 @@ a:focus-visible, button:focus-visible { outline:3px solid var(--accent); outline
 .about-tags { margin:0; }
 .credential-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(16rem, 1fr)); gap:1.5rem; }
 .credential { background:var(--tint-soft); color:var(--text); border:1px solid color-mix(in srgb, var(--text) 14%, transparent); border-radius:var(--radius); padding:1.25rem; }
+.credential { border-top:4px solid var(--accent); }
 .credential h3 { margin:.35rem 0; }
 .credential p { margin:.25rem 0; }
-.credential-label { color:var(--accent); font-weight:700; }
+.credential-label { color:var(--text); font-weight:700; }
 .contact-links { display:flex; flex-wrap:wrap; gap:.75rem; }
 .contact-links a { display:inline-block; padding:.65rem 1.1rem; border:2px solid var(--text);
   border-radius:999px; color:var(--text); font-weight:700; text-decoration:none;

@@ -113,8 +113,8 @@ function renderProjects(list) {
       <p>${p.summary}</p>
       <p><strong>What I learned:</strong> ${p.learned}</p>
       <div class="project-links">
-        <a href="${p.repo}" aria-label="${p.title} repository">View repo <span aria-hidden="true">↗</span></a>
-        ${p.demo ? `<a href="${p.demo}" aria-label="${p.title} live demo">Live demo <span aria-hidden="true">↗</span></a>` : ""}
+        <a href="${p.repo}" aria-label="View repo: ${p.title}">View repo <span aria-hidden="true">↗</span></a>
+        ${p.demo ? `<a href="${p.demo}" aria-label="Live demo: ${p.title}">Live demo <span aria-hidden="true">↗</span></a>` : ""}
       </div>
     </article>`;
   }).join("");
